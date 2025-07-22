@@ -57,8 +57,9 @@ const Navbar = () => {
           <Link to="/premium" className="dropdown-link">Premium</Link>
           <Link to="/support" className="dropdown-link">Support</Link>
           <Link to="/download" className="dropdown-link">Download</Link>
-          <div className="dropdown-divider" />
           <Link to="/install" className="dropdown-link">Install App</Link>
+          {/* <div className="dropdown-divider" /> */}
+          <hr/>
           <Link to="/signup" className="dropdown-link">Sign up</Link>
           <Link to="/login" className="dropdown-link">Log in</Link>
         </div>

@@ -12,7 +12,6 @@
   width: 100%;
   z-index: 999;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-  overflow-x: auto;
 }
 
 /* === Left Section === */
@@ -22,8 +21,15 @@
   gap: 15px;
 }
 
+main
 .spotify-logo {
   color: #1DB954;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .icon-button {
@@ -56,7 +62,6 @@
   outline: none;
   flex: 1;
   padding: 6px;
-  transition: width 0.3s ease;
 }
 
 .search-icon,
@@ -76,9 +81,9 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  margin-right: 30px;
-  gap: 15px;
   margin-left: auto;
+  gap: 15px;
+  margin-right: 25px;
   white-space: nowrap;
 }
 
@@ -133,36 +138,36 @@
   border: none;
   color: white;
   cursor: pointer;
-  margin-left: 10px;
+  font-size: 24px;
 }
 
-/* === Mobile Dropdown === */
+/* === Mobile Dropdown (Navbar ke bahar, properly positioned) === */
 .mobile-dropdown {
-  position: absolute;
-  top: 60px;
-  right: 10px;
+  position: fixed; /* so it appears outside navbar */
+  top: 60px;       /* distance from top of screen */
+  right: 20px;     /* distance from right side */
   background-color: #111;
   border-radius: 8px;
   padding: 10px 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 1000;
-  min-width: 160px;
+  z-index: 2000;
+  width: 180px;
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-dropdown.dropdown-open {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-  
-  
 }
 
+/* === Dropdown Links === */
 .dropdown-link {
   color: white;
   text-decoration: none;
@@ -191,26 +196,12 @@
 
 /* === Responsive Behavior === */
 @media (max-width: 768px) {
-  .search-box input,
-  .search-box .divider,
-  .search-box .download-icon {
-    display: none;
-  }
-
-  .search-box.show input,
-  .search-box.show .divider,
-  .search-box.show .download-icon {
-    display: inline;
-  }
-
   .desktop-only {
     display: none;
-    
   }
 
   .mobile-only {
     display: block;
-    
   }
 
   .hamburger {
@@ -224,5 +215,17 @@
   .login-button {
     padding: 5px 12px;
     font-size: 13px;
+  }
+
+  .search-box input,
+  .search-box .divider,
+  .search-box .download-icon {
+    display: none;
+  }
+
+  .search-box.show input,
+  .search-box.show .divider,
+  .search-box.show .download-icon {
+    display: inline;
   }
 }
